@@ -55,6 +55,8 @@
 #
 
 # @lc code=start
+
+
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         list_length = len(nums)
@@ -66,7 +68,18 @@ class Solution:
             if nums[duplicate_index] != nums[index]:
                 duplicate_index += 1
                 nums[duplicate_index] = nums[index]
-        
+
         return duplicate_index + 1
         # @lc code=end
 
+# @lc code=start
+
+
+class Solution2:
+    def removeDuplicates(nums):
+    for num_index in range(len(nums)-1, 0, -1):
+        if nums[num_index] == nums[num_index-1]:
+            nums.pop(num_index)
+    return len(nums)
+
+    # @lc code=end
