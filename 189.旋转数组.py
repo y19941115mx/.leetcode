@@ -95,9 +95,13 @@ class Solution3:
         self.reverse(nums, k, len(nums) - 1)
     
     def reverse(self, nums:List[int], start:int , end:int) -> None:
-        mid = (end - start) // 2
-        for index in range(mid + 1):
-            nums[start + index], nums[end - index] = nums[end - index], nums[start + index]
+        # mid = (end - start) // 2
+        # for index in range(mid + 1):
+        #     nums[start + index], nums[end - index] = nums[end - index], nums[start + index]
+        while(start < end):
+            nums[start], nums[end] = nums[end], nums[start]
+            start += 1
+            end -= 1
 
 
     
