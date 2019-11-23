@@ -47,7 +47,7 @@ from typing import List
 
 
 class Solution:
-    # 暴力解法 按照提示每次将整个数组后移一个元素 答案是对的，但是频繁的交换操作对性能的损耗过大，导致执行时间过长，没有ac
+    # 暴力解法 按照提示每次将整个数组后移一个元素 答案是对的，但是python中频繁的交换操作对性能的损耗过大，导致执行时间过长，没有ac
     def rotate(self, nums: List[int], k: int) -> None:
         """
         Do not return anything, modify nums in-place instead.
@@ -84,7 +84,7 @@ class Solution2:
 # @lc code=end
 
 class Solution3:
-    # 使用官方题解
+    # 使用官方题解 也是解决这类旋转问题的常用套路 将复杂操作分解成数个简单操作
     def rotate(self, nums: List[int], k: int) -> None:
         """
         Do not return anything, modify nums in-place instead.
