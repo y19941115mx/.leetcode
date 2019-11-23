@@ -58,6 +58,7 @@
 
 
 class Solution:
+    # 自己想到的和官方题解一致 双指针法
     def removeDuplicates(self, nums: List[int]) -> int:
         list_length = len(nums)
         if list_length <= 1:
@@ -76,10 +77,11 @@ class Solution:
 
 
 class Solution2:
-    def removeDuplicates(nums):
-    for num_index in range(len(nums)-1, 0, -1):
-        if nums[num_index] == nums[num_index-1]:
-            nums.pop(num_index)
-    return len(nums)
+    # 看到别人的精彩回答，从后往前把重复项删除，原数组经处理后只含有不同元素
+    def removeDuplicates(self, nums):
+        for num_index in range(len(nums)-1, 0, -1):
+            if nums[num_index] == nums[num_index-1]:
+                nums.pop(num_index)
+        return len(nums)
 
     # @lc code=end
