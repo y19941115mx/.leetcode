@@ -27,14 +27,17 @@
  * 
  */
 
-// @lc code=start
+
 #include <vector>
 #include <map>
 using namespace std;
 
-class Solution {
+//@lc code=start
+class Solution
+{
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
         map<int, int> cacheMap;
 
         for (int i = 0; i < nums.size(); i++)
@@ -42,14 +45,14 @@ public:
             int curr = nums[i];
             int component = target - curr;
 
-            if(cacheMap.find(component) != cacheMap.end()) {
-                return vector<int> {i, cacheMap[component]};
+            if (cacheMap.find(component) != cacheMap.end())
+            {
+                return vector<int>{cacheMap[component], i};
             }
             cacheMap[curr] = i;
         }
 
-        return vector<int> {-1};
-        
+        return vector<int>{-1};
     }
 };
 // @lc code=end
